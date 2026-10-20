@@ -38,6 +38,6 @@ Solver masih greedy dengan pencarian terbatas, sehingga bukan jaminan optimum gl
 
 Build produksi dan pemeriksaan TypeScript akhir lulus. **7 test browser produksi lulus** melalui Playwright + Chrome lokal: desktop/mobile, persetujuan/fallback/reload, pesanan manual, reset terpisah, S1–S4, CSV, retry gagal muat, pembatasan API, serta timeout dan gangguan manual. Browser test pertama menemukan ketidakcocokan Origin saat Next menormalisasi hostname; perbaikan memakai Host permintaan asli, dilindungi enam test regresi, lalu seluruh suite browser dijalankan ulang dan lulus.
 
-Tangkapan layar diperiksa langsung: [dasbor desktop](docs/audit-desktop.png), [simulator mobile](docs/audit-mobile.png), dan [evaluasi](docs/audit-evaluation.png). Tidak ditemukan overflow halaman pada viewport 390 px; tabel dan navigasi tetap dapat digulir di wadahnya.
+Tangkapan layar diperiksa langsung: [dasbor desktop](docs/screenshots/03-dasbor.png), [pesanan mobile](docs/screenshots/07-mobile-pesanan.png), dan [evaluasi](docs/screenshots/06-evaluasi.png). Tidak ditemukan overflow halaman pada viewport 390 px; tabel dan navigasi tetap dapat digulir di wadahnya.
 
 Perintah reproduksi: `npm test`, `npm run typecheck`, `npm run build`, `npm run test:e2e`, `npm run report`, dan `npm audit`. Hasil ini menggambarkan versi dependensi yang terkunci pada `package-lock.json`, bukan jaminan aplikasi bebas seluruh bug atau kerentanan masa depan.

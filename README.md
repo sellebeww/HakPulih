@@ -2,6 +2,34 @@
 
 MVP lokal jaringan pemulihan percetakan: kapasitas dibuka dari mesin yang masih tersedia **dan perpanjangan tenggat pesanan fleksibel**, dengan kompensasi dan persetujuan seluruh pihak terkait. Bahasa Indonesia, Rupiah, satu pekerjaan standar: brosur A5 full color.
 
+## Tampilan
+
+Company profile di `/`, aplikasi di `/app`.
+
+![Company profile](docs/screenshots/01-company-profile.png)
+
+| Dampak pada skenario S1 | Dasbor jaringan |
+| --- | --- |
+| ![Dampak](docs/screenshots/02-dampak.png) | ![Dasbor](docs/screenshots/03-dasbor.png) |
+
+**Simulator gangguan** — pilih skenario S1–S4 atau rancang gangguan sendiri.
+
+![Simulator gangguan](docs/screenshots/04-simulator.png)
+
+**Rencana pemulihan** — pengalihan, perpanjangan tenggat, rincian biaya, dan persetujuan setiap pihak.
+
+![Rencana pemulihan](docs/screenshots/05-rencana-pemulihan.png)
+
+**Evaluasi dampak** — tiga pendekatan dibandingkan pada skenario yang sama.
+
+![Evaluasi dampak](docs/screenshots/06-evaluasi.png)
+
+**Tampilan HP**
+
+| Pesanan | Company profile |
+| --- | --- |
+| ![Pesanan di HP](docs/screenshots/07-mobile-pesanan.png) | ![Profil di HP](docs/screenshots/08-mobile-profil.png) |
+
 ## Menjalankan
 
 Prasyarat: Node.js 22+ dan npm. Pada pemasangan pertama jalankan `npm install`. Setelah dependensi terpasang, aplikasi berjalan dengan satu perintah:
