@@ -1,10 +1,29 @@
+<div align="center">
+
+<img src="public/hakpulih-mark.png" alt="Logo HakPulih" width="140" />
+
 # HakPulih
 
-> Kapasitas untuk bangkit bersama.
+</div>
 
-MVP lokal jaringan pemulihan percetakan: kapasitas dibuka dari mesin yang masih tersedia **dan perpanjangan tenggat pesanan fleksibel**, dengan kompensasi dan persetujuan seluruh pihak terkait. Bahasa Indonesia, Rupiah, satu pekerjaan standar: brosur A5 full color.
+<p align="center"><b>Kapasitas untuk bangkit bersama.</b></p>
 
-**Teknologi:** Next.js 15 (App Router), React, TypeScript, Vitest, Playwright. Solver berupa fungsi TypeScript murni tanpa dependensi UI.
+<p align="center">
+Alat bantu pemulihan produksi percetakan: membuka kapasitas dari mesin mitra yang masih kosong dan perpanjangan tenggat pesanan fleksibel, lalu menghitung kompensasi dan meminta persetujuan seluruh pihak sebelum rencana berjalan.
+</p>
+
+<p align="center">
+  <img alt="TypeScript strict" src="https://img.shields.io/badge/TypeScript-strict-3178C6?logo=typescript&logoColor=white" />
+  <img alt="Next.js 15" src="https://img.shields.io/badge/Next.js-15-000000?logo=nextdotjs&logoColor=white" />
+  <img alt="React 19" src="https://img.shields.io/badge/React-19-149ECA?logo=react&logoColor=white" />
+  <img alt="Vitest 46 uji" src="https://img.shields.io/badge/Vitest-46%20uji-6E9F18?logo=vitest&logoColor=white" />
+  <img alt="Playwright e2e" src="https://img.shields.io/badge/Playwright-e2e-2EAD33?logo=playwright&logoColor=white" />
+  <img alt="Simulasi lokal" src="https://img.shields.io/badge/simulasi-lokal%20(MVP)-8B1E3F" />
+</p>
+
+---
+
+MVP lokal jaringan pemulihan percetakan. Bahasa Indonesia, Rupiah, satu pekerjaan standar: brosur A5 full color. Solver berupa fungsi TypeScript murni tanpa dependensi UI.
 
 **Isi:** [Tampilan](#tampilan) · [Menjalankan](#menjalankan) · [Struktur dan data](#struktur-dan-data) · [Cara menggunakan](#cara-menggunakan) · [Algoritma](#algoritma-dan-antarmuka-solver) · [Ekonomi dan asumsi](#ekonomi-dan-asumsi) · [Metrik](#metrik) · [Skenario dan hasil](#skenario-dan-hasil-validasi) · [Risiko](#risiko--validasi) · [Pemeriksaan](#pemeriksaan-yang-telah-dijalankan)
 
