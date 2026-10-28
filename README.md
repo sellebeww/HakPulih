@@ -1,6 +1,12 @@
 # HakPulih
 
+> Kapasitas untuk bangkit bersama.
+
 MVP lokal jaringan pemulihan percetakan: kapasitas dibuka dari mesin yang masih tersedia **dan perpanjangan tenggat pesanan fleksibel**, dengan kompensasi dan persetujuan seluruh pihak terkait. Bahasa Indonesia, Rupiah, satu pekerjaan standar: brosur A5 full color.
+
+**Teknologi:** Next.js 15 (App Router), React, TypeScript, Vitest, Playwright. Solver berupa fungsi TypeScript murni tanpa dependensi UI.
+
+**Isi:** [Tampilan](#tampilan) · [Menjalankan](#menjalankan) · [Struktur dan data](#struktur-dan-data) · [Cara menggunakan](#cara-menggunakan) · [Algoritma](#algoritma-dan-antarmuka-solver) · [Ekonomi dan asumsi](#ekonomi-dan-asumsi) · [Metrik](#metrik) · [Skenario dan hasil](#skenario-dan-hasil-validasi) · [Risiko](#risiko--validasi) · [Pemeriksaan](#pemeriksaan-yang-telah-dijalankan)
 
 ## Tampilan
 
@@ -32,13 +38,28 @@ Company profile di `/`, aplikasi di `/app`.
 
 ## Menjalankan
 
-Prasyarat: Node.js 22+ dan npm. Pada pemasangan pertama jalankan `npm install`. Setelah dependensi terpasang, aplikasi berjalan dengan satu perintah:
+Prasyarat: Node.js 22+ dan npm.
 
 ```sh
+git clone https://github.com/sellebeww/HakPulih.git
+cd HakPulih
+npm install   # sekali saja
 npm run dev
 ```
 
-Buka http://127.0.0.1:3000 untuk company profile; aplikasi ada di http://127.0.0.1:3000/app. Server pengembangan mengikat loopback agar demo lokal tidak otomatis terbuka ke jaringan. Untuk pemeriksaan: `npm test`, `npm run typecheck`, dan `npm run build`. Mode produksi: `npm run build` lalu `npm start`.
+Buka http://127.0.0.1:3000 untuk company profile; aplikasi ada di http://127.0.0.1:3000/app. Jika port 3000 terpakai, Next.js otomatis memakai port berikutnya (lihat alamat di keluaran terminal). Server pengembangan mengikat loopback agar demo lokal tidak otomatis terbuka ke jaringan.
+
+Jika `npm install` timeout pada registry bawaan, coba `npm install --registry=https://registry.yarnpkg.com`.
+
+| Perintah | Fungsi |
+| --- | --- |
+| `npm run dev` | Server pengembangan |
+| `npm run build` lalu `npm start` | Mode produksi |
+| `npm test` | Pengujian unit (Vitest) |
+| `npm run typecheck` | Pemeriksaan tipe |
+| `npm run test:e2e` | Pengujian browser (Playwright), jalankan `npm run build` dulu |
+| `npm run report` | Mencetak tabel hasil skenario S1–S4 |
+| `npm run format` | Merapikan kode dengan Prettier |
 
 ## Struktur dan data
 
@@ -144,8 +165,6 @@ Manfaat total mode penuh berturut-turut Rp2.004.000, Rp1.876.000, Rp944.000, dan
 - Smoke test server produksi melalui HTTP: halaman utama 200, seed 36 pesanan, input jumlah negatif ditolak (400), pesanan valid tersimpan dan terbaca ulang, reset berhasil.
 - **7 test browser produksi lulus** pada Chrome desktop/mobile, termasuk persetujuan, timeout, reload, penambahan pesanan, reset, S1–S4, CSV, gagal muat/retry, dan batas API. Test ada pada `tests/e2e`; jalankan `npm run build` lalu `npm run test:e2e`. Konfigurasi menggunakan Chrome lokal pada macOS bila tersedia, atau Chromium Playwright (`npx playwright install chromium`). `PLAYWRIGHT_CHROMIUM_EXECUTABLE` dapat menunjuk executable browser lain. Data uji disimpan terpisah di `/private/tmp/hakpulih-e2e-data`; tes tidak mengubah `data/state.json`.
 - `npm audit`: 0 temuan setelah pembaruan Vitest dan override PostCSS 8.5.30+. Temuan database kerentanan dapat berubah di kemudian hari.
-
-Instalasi/build sempat terhalang ruang disk penuh. Cache unduhan tugas dibersihkan dan build berhasil. Cache webpack produksi dinonaktifkan di `next.config.ts` untuk mengurangi penggunaan disk; dependensi dan hasil build tetap membutuhkan ruang kosong yang cukup.
 
 ## Perubahan audit
 
